@@ -5,7 +5,11 @@ import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb+srv://gandev:gandev.2023@cluster0.3eyakps.mongodb.net/?retryWrites=true&w=majority'),
+    MongooseModule.forRoot('mongodb+srv://gandev:gandev.2023@cluster0.3eyakps.mongodb.net/?retryWrites=true&w=majority',
+      {
+        dbName: "test"
+      }
+    ),
     TasksModule,
     ConfigModule.forRoot()
   ],
